@@ -1,0 +1,44 @@
+#define _CRT_SECURE_NO_WARNINGS
+#include<stdio.h>
+void menu()//输入菜单，选择加减乘除
+{
+	printf("**1.add  2.sub**\n");
+	printf("**3.mul  4.div**\n");
+	printf("**    0.exit  **\n");
+	printf("****************\n");
+}
+int add(int x,int y) //加法
+{
+	return x + y;
+}
+int sub(int x,int y) //减法
+{
+	return x - y;
+}
+int mul(int x,int y) //乘法
+{
+	return x * y;
+}
+int div(int x,int y) //除法
+{
+	return x / y;
+}
+int main()
+{
+	int input = 0;
+	int a = 0, b = 0;
+	int(*arr[5])(int, int) = {0,add,sub,mul,div };
+	do
+	{
+		menu();
+		printf("请选择:>\n");
+		scanf("%d", &input);
+		printf("请输入操作数:>\n");
+		scanf("%d%d", &a, &b);//用户输入两个数
+		int z = arr[input](a, b);
+		printf("%d\n",z);
+
+	}
+	while(input);
+	return 0;
+}
