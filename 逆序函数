@@ -1,0 +1,25 @@
+#define _CRT_SECURE_NO_WARNINGS
+#include<stdio.h>
+#include<string.h>
+//逆序函数
+void reverse(char*str)
+{
+	char* left = str;
+	char* right = str + strlen(str)-1;
+	while (left < right)
+	{
+		char tem = *left;
+		*left = *right;
+		*right = tem;
+		left++;
+		right--;
+	}
+}
+int main()
+{
+	char arr[256] = { 0 };
+	//scanf("%s", arr);
+	gets(arr);
+	reverse(arr);
+	printf("%s", arr);
+}
