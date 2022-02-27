@@ -1,0 +1,24 @@
+#define _CRT_SECURE_NO_WARNINGS
+#include<stdio.h>
+#include<stdlib.h>
+//查找函数
+void coculate(char*arr,int sz)//指针传参
+{
+	int b = 0;//进行计数
+	for (int i = 0; i < sz; i++)
+	{
+		arr++;
+		if (*arr >= 'A' && *arr <= 'Z')
+		{
+			b++;
+		}
+	}
+	printf("%d", b);
+}
+int main()
+{
+	char arr[23] = {0};//初始字符数组
+	scanf("%s", arr);//输入字符串
+	int sz = sizeof(arr);//字符串长度
+	coculate(arr,sz);//引用函数
+}
