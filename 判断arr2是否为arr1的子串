@@ -1,0 +1,37 @@
+#define _CRT_SECURE_NO_WARNINGS
+#include<stdio.h>
+#include<string.h>
+//判断arr2是否为arr1的子串
+int is_left(char* str1, char* str2)
+{
+	int len1 = strlen(str1);
+	int len2 = strlen(str2);
+	if (len1 != len2)//字符数如果不等不能进行判断
+		return 0;
+	strcat(str1, str1);
+	char * ret= strstr(str1, str2);//调用库函数进行子串判断
+	if (ret == NULL)
+	{
+		return 0;
+	}
+	else
+	{
+		return 1;
+	}
+}
+//
+int main()
+{
+	char arr1[30] = "abcdef";
+	char arr2[] = "cdgfb";
+	int ret = is_left(arr1, arr2);
+	if (ret == 1)
+	{
+		printf("yes\n");
+	}
+	else
+	{
+		printf("no\n");
+	}
+	return 0;
+}
